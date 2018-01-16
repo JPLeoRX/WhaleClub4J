@@ -34,4 +34,39 @@ public class Market {
 
     // Maximum active position size for each base currency
     private Limits limits;
+
+    // Getters
+    //------------------------------------------------------------------------------------------------------------------
+    public String getDisplay_name() {
+        return display_name;
+    }
+
+    public double[] getLeverages() {
+        return leverages;
+    }
+
+    public long getLimit() {
+        return limit;
+    }
+
+    public String getHours() {
+        return hours;
+    }
+
+    public double getFinancing_rate() {
+        return financing_rate;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public Turbo getTurbo() {
+        return turbo;
+    }
+
+    public Limits getLimits() {
+        return limits;
+    }
+    //------------------------------------------------------------------------------------------------------------------
 }

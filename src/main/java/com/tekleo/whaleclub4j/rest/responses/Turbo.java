@@ -13,6 +13,18 @@ public class Turbo {
     // Maximum active position size for each base currency
     private Limits limits;
 
+    public int getLimit() {
+        return limit;
+    }
+
+    public Payoff getPayoff() {
+        return payoff;
+    }
+
+    public Limits getLimits() {
+        return limits;
+    }
+
     @Override
     public String toString() {
         return "limit=" + limit + ", payoff=" + payoff + ", limits={" + limits + "}";
