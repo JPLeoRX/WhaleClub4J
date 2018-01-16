@@ -27,4 +27,19 @@ public class Balance {
 
     // Base currency.
     private String currency;
+
+    @Override
+    public String toString() {
+        return "Balance{" +
+                "available_amount=" + available_amount +
+                ", total_amount=" + total_amount +
+                ", unconfirmed_amount=" + unconfirmed_amount +
+                ", deposit_address='" + deposit_address + '\'' +
+                ", active_amount=" + active_amount +
+                ", pending_amount=" + pending_amount +
+                ", active_amount_turbo=" + active_amount_turbo +
+                ", last_updated=" + last_updated +
+                ", currency='" + currency + '\'' +
+                '}';
+    }
 }
