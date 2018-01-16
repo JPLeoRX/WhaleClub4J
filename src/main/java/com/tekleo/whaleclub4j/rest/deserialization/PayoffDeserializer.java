@@ -7,7 +7,6 @@ import com.google.gson.JsonParseException;
 import com.tekleo.whaleclub4j.rest.responses.Payoff;
 
 import java.lang.reflect.Type;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 

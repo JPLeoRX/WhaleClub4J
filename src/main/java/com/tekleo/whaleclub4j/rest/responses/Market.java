@@ -1,16 +1,18 @@
 package com.tekleo.whaleclub4j.rest.responses;
 
-
+import com.tekleo.whaleclub4j.rest.Response;
 import com.tekleo.whaleclub4j.rest.requests.GetMarkets;
+
+import java.util.Arrays;
 
 /**
  * Main representation of the market
  *
- * {@link GetMarkets}
+ * For {@link GetMarkets} request
  *
  * @author Leo Ertuna
  */
-public class Market {
+public class Market implements Response {
     // The market’s conventional name.
     private String display_name;
 
@@ -34,6 +36,8 @@ public class Market {
 
     // Maximum active position size for each base currency
     private Limits limits;
+
+
 
     // Getters
     //------------------------------------------------------------------------------------------------------------------
@@ -67,6 +71,25 @@ public class Market {
 
     public Limits getLimits() {
         return limits;
+    }
+    //------------------------------------------------------------------------------------------------------------------
+
+
+
+    // Others
+    //------------------------------------------------------------------------------------------------------------------
+    @Override
+    public String toString() {
+        return "Market{" +
+                "display_name='" + display_name + '\'' +
+                ", leverages=" + Arrays.toString(leverages) +
+                ", limit=" + limit +
+                ", hours='" + hours + '\'' +
+                ", financing_rate=" + financing_rate +
+                ", category='" + category + '\'' +
+                ", turbo=" + turbo +
+                ", limits=" + limits +
+                '}';
     }
     //------------------------------------------------------------------------------------------------------------------
 }

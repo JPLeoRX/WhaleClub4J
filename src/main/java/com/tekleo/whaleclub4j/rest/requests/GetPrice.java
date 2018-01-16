@@ -18,7 +18,7 @@ import com.tekleo.whaleclub4j.rest.Request;
  *
  * @author Leo Ertuna
  */
-public class GetPrice extends Request {
+public class GetPrice implements Request {
     private static final String method = "/price";
 
     // Required. One or more comma-separated market symbols.

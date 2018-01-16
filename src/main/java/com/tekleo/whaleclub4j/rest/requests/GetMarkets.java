@@ -22,7 +22,7 @@ import com.tekleo.whaleclub4j.rest.Request;
  *
  * @author Leo Ertuna
  */
-public class GetMarkets extends Request {
+public class GetMarkets implements Request {
     private static final String method = "/markets";
 
     // Optional. One or more comma-separated market symbols.

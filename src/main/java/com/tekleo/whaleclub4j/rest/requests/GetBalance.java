@@ -15,7 +15,7 @@ import com.tekleo.whaleclub4j.rest.Request;
  *
  * @author Leo Ertuna
  */
-public class GetBalance extends Request {
+public class GetBalance implements Request {
     private static final String method = "/balance";
 
     @Override

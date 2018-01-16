@@ -21,7 +21,7 @@ import com.tekleo.whaleclub4j.rest.Request;
  *
  * @author Leo Ertuna
  */
-public class GetTransactions extends Request {
+public class GetTransactions implements Request {
     private static final String method = "/transactions";
 
     // Optional. Can be deposits, withdrawals, referrals, or bonuses. Defaults to deposits
