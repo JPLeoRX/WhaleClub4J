@@ -1,4 +1,4 @@
-package rest.responses;
+package com.tekleo.whaleclub4j.rest.responses;
 
 /**
  * Market with only basic information such as display name and category.

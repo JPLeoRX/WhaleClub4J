@@ -1,4 +1,4 @@
-package rest;
+package com.tekleo.whaleclub4j.rest;
 
 public class Endpoints {
     public static final String BASE = "https://api.whaleclub.co";

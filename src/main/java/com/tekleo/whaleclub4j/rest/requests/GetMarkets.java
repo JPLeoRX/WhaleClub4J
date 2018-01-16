@@ -1,7 +1,7 @@
-package rest.requests;
+package com.tekleo.whaleclub4j.rest.requests;
 
-import rest.Endpoints;
-import rest.Request;
+import com.tekleo.whaleclub4j.rest.Endpoints;
+import com.tekleo.whaleclub4j.rest.Request;
 
 /**
  * Returns market information for one or more markets.

@@ -1,8 +1,8 @@
-package rest.deserialization;
+package com.tekleo.whaleclub4j.rest.deserialization;
 
 import com.google.gson.*;
-import rest.responses.Transaction;
-import rest.responses.Transactions;
+import com.tekleo.whaleclub4j.rest.responses.Transaction;
+import com.tekleo.whaleclub4j.rest.responses.Transactions;
 
 import java.lang.reflect.Type;
 

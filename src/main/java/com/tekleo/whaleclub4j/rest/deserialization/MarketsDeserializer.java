@@ -1,9 +1,8 @@
-package rest.deserialization;
+package com.tekleo.whaleclub4j.rest.deserialization;
 
 import com.google.gson.*;
-import rest.requests.GetMarkets;
-import rest.responses.Market;
-import rest.responses.Markets;
+import com.tekleo.whaleclub4j.rest.responses.Markets;
+import com.tekleo.whaleclub4j.rest.responses.Market;
 
 import java.lang.reflect.Type;
 import java.util.Map;

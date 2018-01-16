@@ -1,3 +1,5 @@
+package com.tekleo.whaleclub4j;
+
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;

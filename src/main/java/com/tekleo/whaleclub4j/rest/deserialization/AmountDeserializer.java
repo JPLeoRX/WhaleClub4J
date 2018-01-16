@@ -1,7 +1,7 @@
-package rest.deserialization;
+package com.tekleo.whaleclub4j.rest.deserialization;
 
 import com.google.gson.*;
-import rest.responses.Amount;
+import com.tekleo.whaleclub4j.rest.responses.Amount;
 
 import java.lang.reflect.Type;
 import java.util.Map;

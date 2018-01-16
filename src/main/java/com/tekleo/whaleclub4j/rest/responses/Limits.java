@@ -1,4 +1,4 @@
-package rest.responses;
+package com.tekleo.whaleclub4j.rest.responses;
 
 public class Limits {
     private long BTC;
