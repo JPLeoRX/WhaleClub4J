@@ -14,7 +14,7 @@ public class MarketsDeserializer implements JsonDeserializer<Markets> {
 
         JsonObject rootObject = jsonElement.getAsJsonObject();
         for (Map.Entry<String, JsonElement> entry : rootObject.entrySet())
-            markets.add(entry.getKey(), jsonDeserializationContext.deserialize(entry.getValue(), Market.class));
+            markets.put(entry.getKey(), jsonDeserializationContext.deserialize(entry.getValue(), Market.class));
 
         return markets;
     }

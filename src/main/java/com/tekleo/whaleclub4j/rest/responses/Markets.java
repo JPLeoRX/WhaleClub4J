@@ -1,16 +1,22 @@
 package com.tekleo.whaleclub4j.rest.responses;
 
+import com.tekleo.whaleclub4j.rest.requests.GetMarkets;
+
 import java.util.HashMap;
 
-public class Markets {
-    private HashMap<String, Market> map = new HashMap<>();
-
+/**
+ * Markets represented as HashMap
+ *
+ * For {@link GetMarkets} request
+ *
+ * @author Leo Ertuna
+ */
+public class Markets extends HashMap<String, Market> {
     public void add(String name, Market market) {
-        map.put(name, market);
+        this.put(name, market);
     }
 
-    @Override
-    public String toString() {
-        return "Markets: " + map;
+    public Market put(String name, Market market) {
+        return super.put(name, market);
     }
 }
