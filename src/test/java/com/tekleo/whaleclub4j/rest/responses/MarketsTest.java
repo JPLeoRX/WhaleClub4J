@@ -1,6 +1,8 @@
 package com.tekleo.whaleclub4j.rest.responses;
 
 import com.tekleo.whaleclub4j.Parser;
+import com.tekleo.whaleclub4j.rest.responses.markets.Market;
+import com.tekleo.whaleclub4j.rest.responses.markets.Markets;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

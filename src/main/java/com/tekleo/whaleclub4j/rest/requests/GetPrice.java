@@ -1,6 +1,7 @@
 package com.tekleo.whaleclub4j.rest.requests;
 
 import com.tekleo.whaleclub4j.rest.Request;
+import com.tekleo.whaleclub4j.rest.requests.markets.GetMarkets;
 import com.tekleo.whaleclub4j.util.ListUtils;
 
 import java.util.List;

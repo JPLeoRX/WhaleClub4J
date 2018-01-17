@@ -4,7 +4,7 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
-import com.tekleo.whaleclub4j.rest.responses.Payoff;
+import com.tekleo.whaleclub4j.rest.responses.markets.Payoff;
 
 import java.lang.reflect.Type;
 import java.util.Map;

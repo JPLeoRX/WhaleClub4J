@@ -1,7 +1,7 @@
-package com.tekleo.whaleclub4j.rest.responses;
+package com.tekleo.whaleclub4j.rest.responses.markets;
 
 import com.tekleo.whaleclub4j.rest.Response;
-import com.tekleo.whaleclub4j.rest.requests.GetMarkets;
+import com.tekleo.whaleclub4j.rest.requests.markets.GetMarkets;
 
 /**
  * Market with only basic information such as display name and category.

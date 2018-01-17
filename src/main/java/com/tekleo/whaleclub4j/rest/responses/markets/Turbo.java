@@ -1,4 +1,4 @@
-package com.tekleo.whaleclub4j.rest.responses;
+package com.tekleo.whaleclub4j.rest.responses.markets;
 
 /**
  * Information about turbo trading

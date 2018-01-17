@@ -1,6 +1,7 @@
-package com.tekleo.whaleclub4j.rest.requests;
+package com.tekleo.whaleclub4j.rest.requests.markets;
 
 import com.tekleo.whaleclub4j.rest.Request;
+import com.tekleo.whaleclub4j.rest.responses.markets.Markets;
 import com.tekleo.whaleclub4j.util.ListUtils;
 
 import java.util.List;
@@ -17,6 +18,8 @@ import java.util.Map;
  * Omit :symbol(s) to get a list of of available markets with basic
  * information such as display name and category.
  *
+ * Response: {@link Markets}
+ *
  * EX: Request market information for Gold and Apple
  * https://api.whaleclub.co/v1/markets/XAU-USD,AAPL
  *
@@ -29,8 +32,16 @@ public class GetMarkets implements Request {
     // Optional. One or more comma-separated market symbols.
     private List<String> symbols;
 
+    public GetMarkets() {
+
+    }
+
     public GetMarkets(String ... symbols) {
-        this.symbols = ListUtils.toList(symbols);
+        this(ListUtils.toList(symbols));
+    }
+
+    public GetMarkets(List<String> symbols) {
+        this.symbols = symbols;
     }
 
     @Override
