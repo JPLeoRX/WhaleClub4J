@@ -1,4 +1,4 @@
-package com.tekleo.whaleclub4j;
+package com.tekleo.whaleclub4j.core;
 
 import com.tekleo.whaleclub4j.rest.Request;
 import com.tekleo.whaleclub4j.util.MapUtils;
@@ -10,6 +10,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicHeader;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
@@ -25,6 +26,8 @@ public class Client {
     private HttpClient client;
     private HttpUriRequest request;
     private HttpResponse response;
+    private BasicHeader jsonHeader;
+    private BasicHeader authHeader;
     private ResponseHeaders responseHeaders;
     private HttpEntity entity;
     private String jsonResponse;
@@ -36,6 +39,11 @@ public class Client {
         this.apiToken = apiToken;
     }
 
+    private void createHeaders() {
+        jsonHeader = new BasicHeader(HttpHeaders.ACCEPT, "application/json");
+        authHeader = new BasicHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiToken);
+    }
+
     private void createClient() {
         client = HttpClients.custom().build();
     }
@@ -44,8 +52,8 @@ public class Client {
         request = RequestBuilder
                 .get()
                 .setUri(url)
-                .setHeader(HttpHeaders.ACCEPT, "application/json")
-                .setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiToken)
+                .setHeader(jsonHeader)
+                .setHeader(authHeader)
                 .build();
     }
 
@@ -54,8 +62,8 @@ public class Client {
                 .post()
                 .setUri(url)
                 .setEntity(MapUtils.toEntity(parameters))
-                .setHeader(HttpHeaders.ACCEPT, "application/json")
-                .setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiToken)
+                .setHeader(jsonHeader)
+                .setHeader(authHeader)
                 .build();
     }
 
@@ -64,8 +72,8 @@ public class Client {
                 .put()
                 .setUri(url)
                 .setEntity(MapUtils.toEntity(parameters))
-                .setHeader(HttpHeaders.ACCEPT, "application/json")
-                .setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiToken)
+                .setHeader(jsonHeader)
+                .setHeader(authHeader)
                 .build();
     }
 
@@ -104,6 +112,7 @@ public class Client {
     }
 
     public String send() {
+        createHeaders();
         createClient();
         createRequest();
         executeRequest();

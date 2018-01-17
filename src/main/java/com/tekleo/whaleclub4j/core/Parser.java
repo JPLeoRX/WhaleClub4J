@@ -1,4 +1,4 @@
-package com.tekleo.whaleclub4j;
+package com.tekleo.whaleclub4j.core;
 
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;

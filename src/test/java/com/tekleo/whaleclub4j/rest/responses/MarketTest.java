@@ -1,6 +1,6 @@
 package com.tekleo.whaleclub4j.rest.responses;
 
-import com.tekleo.whaleclub4j.Parser;
+import com.tekleo.whaleclub4j.core.Parser;
 import com.tekleo.whaleclub4j.rest.responses.markets.Market;
 import org.junit.Test;
 

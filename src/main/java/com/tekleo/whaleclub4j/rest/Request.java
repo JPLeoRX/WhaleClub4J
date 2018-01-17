@@ -1,6 +1,6 @@
 package com.tekleo.whaleclub4j.rest;
 
-import com.tekleo.whaleclub4j.Client;
+import com.tekleo.whaleclub4j.core.Client;
 
 import java.util.List;
 import java.util.Map;

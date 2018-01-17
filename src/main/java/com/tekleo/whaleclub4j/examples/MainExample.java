@@ -1,9 +1,10 @@
-package com.tekleo.whaleclub4j;
+package com.tekleo.whaleclub4j.examples;
 
-import com.tekleo.whaleclub4j.rest.requests.NewPosition;
-import com.tekleo.whaleclub4j.rest.requests.markets.MarketsApiImpl;
+import com.tekleo.whaleclub4j.core.WhaleClub4J;
+import com.tekleo.whaleclub4j.rest.responses.markets.Markets;
+import com.tekleo.whaleclub4j.rest.responses.markets.MarketsBasic;
 
-public class Main {
+public class MainExample {
     public static void main(String[] args) {
 //        String jsonStr = new GetMarkets().send();
 //        System.out.println(jsonStr);
@@ -23,6 +24,11 @@ public class Main {
 //        System.out.println(transactions);
 
         WhaleClub4J whaleClub4J = new WhaleClub4J("dc296379-92cf-44d2-827a-66a600a2411a");
-        System.out.println(whaleClub4J.getMarkets("BTC-USD"));
+
+        MarketsBasic allMarketsPreview = whaleClub4J.getMarkets();
+        Markets myMarkets = whaleClub4J.getMarkets("BTC-USD", "AAPL");
+
+        System.out.println(allMarketsPreview);
+        System.out.println(myMarkets);
     }
 }

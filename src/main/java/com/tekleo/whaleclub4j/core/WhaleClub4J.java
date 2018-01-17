@@ -1,4 +1,4 @@
-package com.tekleo.whaleclub4j;
+package com.tekleo.whaleclub4j.core;
 
 import com.tekleo.whaleclub4j.rest.Endpoints;
 import com.tekleo.whaleclub4j.rest.requests.markets.MarketsApi;

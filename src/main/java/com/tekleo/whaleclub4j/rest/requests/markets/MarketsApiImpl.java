@@ -1,9 +1,8 @@
 package com.tekleo.whaleclub4j.rest.requests.markets;
 
-import com.tekleo.whaleclub4j.Parser;
+import com.tekleo.whaleclub4j.core.Parser;
 import com.tekleo.whaleclub4j.rest.responses.markets.Markets;
 import com.tekleo.whaleclub4j.rest.responses.markets.MarketsBasic;
-import com.tekleo.whaleclub4j.util.ListUtils;
 
 import java.util.List;
 
