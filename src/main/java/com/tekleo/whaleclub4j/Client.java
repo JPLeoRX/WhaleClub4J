@@ -1,5 +1,6 @@
 package com.tekleo.whaleclub4j;
 
+import com.tekleo.whaleclub4j.rest.Request;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;
@@ -13,6 +14,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 public class Client {
+    private Request.Type type;
     private String url;
     private String apiToken;
 
@@ -23,7 +25,8 @@ public class Client {
     private HttpEntity entity;
     private String jsonResponse;
 
-    public Client(String url, String apiToken) {
+    public Client(Request.Type type, String url, String apiToken) {
+        this.type = type;
         this.url = url;
         this.apiToken = apiToken;
     }
@@ -39,6 +42,22 @@ public class Client {
                 .setHeader(HttpHeaders.ACCEPT, "application/json")
                 .setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiToken)
                 .build();
+    }
+
+    private void createPostRequest() {
+        request = RequestBuilder
+                .post()
+                .setUri(url)
+                .setHeader(HttpHeaders.ACCEPT, "application/json")
+                .setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiToken)
+                .build();
+    }
+
+    private void createRequest() {
+        if (type == Request.Type.GET)
+            createGetRequest();
+        else if (type == Request.Type.POST)
+            createPostRequest();
     }
 
     private void executeRequest() {
@@ -68,7 +87,7 @@ public class Client {
 
     public String send() {
         createClient();
-        createGetRequest();
+        createRequest();
         executeRequest();
         extractHeaders();
         extractJson();

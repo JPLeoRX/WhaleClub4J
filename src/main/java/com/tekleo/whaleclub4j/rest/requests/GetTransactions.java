@@ -1,7 +1,11 @@
 package com.tekleo.whaleclub4j.rest.requests;
 
-import com.tekleo.whaleclub4j.rest.Endpoints;
 import com.tekleo.whaleclub4j.rest.Request;
+import com.tekleo.whaleclub4j.util.ListUtils;
+import com.tekleo.whaleclub4j.util.MapUtils;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * List transactions that have occurred on your account.
@@ -22,13 +26,11 @@ import com.tekleo.whaleclub4j.rest.Request;
  * @author Leo Ertuna
  */
 public class GetTransactions implements Request {
-    private static final String method = "/transactions";
-
     // Optional. Can be deposits, withdrawals, referrals, or bonuses. Defaults to deposits
-    private String type = Type.DEPOSITS.name().toLowerCase();
+    private String type;
 
     // Optional. Number of results per request. Defaults to 5. Max is 50.
-    private String limit = "5";
+    private String limit;
 
     public GetTransactions() {
         this(Type.DEPOSITS, "5");
@@ -40,8 +42,23 @@ public class GetTransactions implements Request {
     }
 
     @Override
-    public String getUrl() {
-        return Endpoints.getUrl(method) + "/" + type + "?limit=" + limit;
+    public Request.Type getType() {
+        return Request.Type.GET;
+    }
+
+    @Override
+    public String getMethod() {
+        return "/transactions";
+    }
+
+    @Override
+    public List<String> getArguments() {
+        return ListUtils.toList(type);
+    }
+
+    @Override
+    public Map<String, String> getParameters() {
+        return MapUtils.toMap("limit", limit);
     }
 
     private static enum Type {

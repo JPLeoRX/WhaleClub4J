@@ -1,13 +1,12 @@
 package com.tekleo.whaleclub4j;
 
 import com.tekleo.whaleclub4j.rest.Endpoints;
+import com.tekleo.whaleclub4j.rest.requests.GetMarkets;
 import com.tekleo.whaleclub4j.rest.requests.GetTransactions;
 
 public class Main {
     public static void main(String[] args) {
-        Client client = new Client(new GetTransactions().getUrl(), Endpoints.API_TOKEN);
-
-        String jsonStr = client.send();
+        String jsonStr = new GetMarkets().send();
         System.out.println(jsonStr);
 
 //        Markets markets = gson.fromJson(jsonStr, Markets.class);

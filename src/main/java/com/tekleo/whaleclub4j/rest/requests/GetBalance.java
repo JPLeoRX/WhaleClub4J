@@ -1,7 +1,9 @@
 package com.tekleo.whaleclub4j.rest.requests;
 
-import com.tekleo.whaleclub4j.rest.Endpoints;
 import com.tekleo.whaleclub4j.rest.Request;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Returns information about your balance.
@@ -16,10 +18,23 @@ import com.tekleo.whaleclub4j.rest.Request;
  * @author Leo Ertuna
  */
 public class GetBalance implements Request {
-    private static final String method = "/balance";
+    @Override
+    public Type getType() {
+        return Type.GET;
+    }
 
     @Override
-    public String getUrl() {
-        return Endpoints.getUrl(method);
+    public String getMethod() {
+        return "/balance";
+    }
+
+    @Override
+    public List<String> getArguments() {
+        return null;
+    }
+
+    @Override
+    public Map<String, String> getParameters() {
+        return null;
     }
 }
