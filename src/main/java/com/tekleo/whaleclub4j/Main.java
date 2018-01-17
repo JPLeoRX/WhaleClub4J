@@ -3,12 +3,15 @@ package com.tekleo.whaleclub4j;
 import com.tekleo.whaleclub4j.rest.Endpoints;
 import com.tekleo.whaleclub4j.rest.requests.GetMarkets;
 import com.tekleo.whaleclub4j.rest.requests.GetTransactions;
+import com.tekleo.whaleclub4j.rest.requests.NewPosition;
 
 public class Main {
     public static void main(String[] args) {
-        String jsonStr = new GetMarkets().send();
-        System.out.println(jsonStr);
+//        String jsonStr = new GetMarkets().send();
+//        System.out.println(jsonStr);
 
+        String url = new NewPosition("long", "AAPL", 10, 20000000).getUrl();
+        System.out.println(url);
 //        Markets markets = gson.fromJson(jsonStr, Markets.class);
 //        System.out.println(markets);
 //

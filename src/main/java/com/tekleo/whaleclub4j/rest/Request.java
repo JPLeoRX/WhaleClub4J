@@ -23,22 +23,22 @@ public interface Request {
             url += "/";
             for (String argument : getArguments())
                 url += argument + ",";
-            url = url.substring(0, url.length() - 2);
+            url = url.substring(0, url.length() - 1);
         }
 
-        // If there are any parameters
-        if (getParameters() != null && !getParameters().isEmpty()) {
+        // If there are any parameters and it's a get request
+        if (getParameters() != null && !getParameters().isEmpty() && getType() == Type.GET) {
             url += "?";
             for (Map.Entry<String, String> parameter : getParameters().entrySet())
                 url += parameter.getKey() + "=" + parameter.getValue() + "&";
-            url = url.substring(0, url.length() - 2);
+            url = url.substring(0, url.length() - 1);
         }
 
         return url;
     }
 
     default String send() {
-        Client client = new Client(getType(), getUrl(), Endpoints.API_TOKEN);
+        Client client = new Client(getType(), getUrl(), getParameters(), Endpoints.API_TOKEN);
         return client.send();
     }
 

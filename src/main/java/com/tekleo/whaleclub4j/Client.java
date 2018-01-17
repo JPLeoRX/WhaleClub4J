@@ -1,6 +1,7 @@
 package com.tekleo.whaleclub4j;
 
 import com.tekleo.whaleclub4j.rest.Request;
+import com.tekleo.whaleclub4j.util.MapUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;
@@ -12,10 +13,13 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Client {
     private Request.Type type;
     private String url;
+    private Map<String, String> parameters;
     private String apiToken;
 
     private HttpClient client;
@@ -25,9 +29,10 @@ public class Client {
     private HttpEntity entity;
     private String jsonResponse;
 
-    public Client(Request.Type type, String url, String apiToken) {
+    public Client(Request.Type type, String url, Map<String, String> parameters, String apiToken) {
         this.type = type;
         this.url = url;
+        this.parameters = parameters;
         this.apiToken = apiToken;
     }
 
@@ -48,6 +53,7 @@ public class Client {
         request = RequestBuilder
                 .post()
                 .setUri(url)
+                .setEntity(MapUtils.toEntity(parameters))
                 .setHeader(HttpHeaders.ACCEPT, "application/json")
                 .setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiToken)
                 .build();
