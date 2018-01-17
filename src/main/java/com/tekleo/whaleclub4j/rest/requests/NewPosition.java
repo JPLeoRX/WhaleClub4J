@@ -24,6 +24,8 @@ import java.util.Map;
  *
  * EX: Open a 100BTC EUR/USD long position at market price, with a stop-loss and take-profit
  * https://api.whaleclub.co/v1/position/new
+ *
+ * @author Leo Ertuna
  */
 public class NewPosition implements Request {
     // Required. Can be long or short.
@@ -84,12 +86,12 @@ public class NewPosition implements Request {
 
     @Override
     public String getMethod() {
-        return "/position";
+        return "/position/new";
     }
 
     @Override
     public List<String> getArguments() {
-        return ListUtils.toList("new");
+        return null;
     }
 
     @Override

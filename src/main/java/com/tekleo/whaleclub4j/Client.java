@@ -59,11 +59,23 @@ public class Client {
                 .build();
     }
 
+    private void createPutRequest() {
+        request = RequestBuilder
+                .put()
+                .setUri(url)
+                .setEntity(MapUtils.toEntity(parameters))
+                .setHeader(HttpHeaders.ACCEPT, "application/json")
+                .setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + apiToken)
+                .build();
+    }
+
     private void createRequest() {
         if (type == Request.Type.GET)
             createGetRequest();
         else if (type == Request.Type.POST)
             createPostRequest();
+        else if (type == Request.Type.PUT)
+            createPutRequest();
     }
 
     private void executeRequest() {

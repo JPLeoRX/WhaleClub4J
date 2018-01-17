@@ -43,6 +43,6 @@ public interface Request {
     }
 
     public static enum Type {
-        GET, POST;
+        GET, POST, PUT;
     }
 }
